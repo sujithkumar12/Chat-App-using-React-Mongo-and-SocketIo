@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: #097a6b;
+  height: 100vh;
+  width: 100vw;
+}
+.loader {
+  max-inline-size: 100%;
+}
+
+.titlecontainer {
+  color: white;
+}
+.avatars {
+  display: flex;
+  gap: 2rem;
+}
+.avatars img {
+  height: 6rem;
+  transition: 0.5s ease-in-out;
+}
+.avatar {
+  border: 0.4rem solid transparent;
+  padding: 0.4rem;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+.selected {
+  border: 0.4rem solid #fff;
+  border-radius: 0.4rem;
+}
+
+.submitbtn {
+  background-color: #11bfa8;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+.submitbtn:hover {
+  background-color: #097a6b;
+}

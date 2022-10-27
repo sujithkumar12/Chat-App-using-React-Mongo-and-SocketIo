@@ -1,0 +1,64 @@
+.container {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  align-items: center;
+  background-color: #a7abaa;
+  padding: 0 2rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+
+.buttoncontainer {
+  display: flex;
+  align-items: center;
+  color: black;
+  gap: 1rem;
+}
+
+.emoji {
+  position: relative;
+}
+
+.emoji svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.inputcontainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #cacfce;
+  border: none;
+}
+
+.inputcontainer input {
+  width: 100%;
+  height: 60%;
+  background-color: transparent;
+  color: black;
+  border: none;
+  outline: none;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.inputcontainer button {
+  height: 100%;
+  padding: 0.3rem 2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #097a6b;
+  border: none;
+  outline: none;
+}
+
+.inputcontainer button svg {
+  font-size: 2rem;
+  color: white;
+}

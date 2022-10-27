@@ -1,0 +1,23 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #097a6b;
+}
+
+.container2 {
+  height: 85vh;
+  width: 85vw;
+  background-color: #d7d9d8;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+@media screen and (min-width: 720px) and (max-width: 1080px) {
+  .container2 {
+    grid-template-columns: 35% 65%;
+  }
+}
