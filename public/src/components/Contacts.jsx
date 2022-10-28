@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
+import Menu from "../assets/menu.png";
+import TextField from "@mui/material/TextField";
 import classes from "./Contacts.module.css";
 import Logout from "./Logout";
+import { Box } from "@mui/system";
 
 const Contacts = ({ contacts, currentUser, changeChat }) => {
   const [currentUserName, setCurrentUserName] = useState(undefined);
@@ -28,19 +31,22 @@ const Contacts = ({ contacts, currentUser, changeChat }) => {
           <div className={classes.brand}>
             <img src={Logo} alt="logo" />
             <h2>Chat App</h2>
-            <div className={classes.search}>
-              <input
-                className="form-control"
-                type="search"
-                placeholder="Search"
-                name="searchTerm"
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
-              ></input>
-            </div>
           </div>
-
+          <Box
+            sx={{ width: "100%", textAlign: "center" }}
+            className={classes.search}
+          >
+            <TextField
+              variant="outlined"
+              label="Search"
+              sx={{ width: "90%" }}
+              InputProps={{ style: { fontFamily: "poppins", color: "black" } }}
+              InputLabelProps={{ style: { fontFamily: "poppins" } }}
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </Box>
           <div className={classes.contacts}>
             {contacts
               .filter((contact) => {

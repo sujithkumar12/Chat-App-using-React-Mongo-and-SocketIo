@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./SetAvatar.module.css";
 import loader from "../assets/loader.gif";
-import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -16,7 +15,7 @@ const SetAvatar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedAvatar, setSelectedAvatar] = useState(undefined);
   const toastOptions = {
-    position: "bottom-right",
+    position: "top-right",
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
@@ -42,7 +41,7 @@ const SetAvatar = () => {
         user.isAvatarImageSet = true;
         user.avatarImage = data.image;
         localStorage.setItem("chat-app-user", JSON.stringify(user));
-        navigate("/");
+        navigate("/login");
       } else {
         toast.error("Error setting avatar. Please try again", toastOptions);
       }
@@ -62,12 +61,6 @@ const SetAvatar = () => {
       setAvatars(data);
       setIsLoading(false);
     };
-    // const data = [];
-    // for (let i = 0; i < 4; i++) {
-    //   const image = axios.get(`${api}/${Math.round(Math.random() * 1000)}`);
-    //   const buffer = new Buffer(image.data);
-    //   data.push(buffer.toString("base64"));
-    // }
     fetchData();
   }, []);
 

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import classes from "./Register.module.css";
 import Logo from "../assets/logo.png";
+import MainLogo from "../assets/acc.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { registerRoute } from "../utils/APIRoutes";
-
 import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -15,6 +15,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import PasswordErrorMsg from "../components/PasswordErrorMsg";
 
 function Register() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -27,18 +28,18 @@ function Register() {
   });
 
   const toastOptions = {
-    position: "bottom-right",
+    position: "top-right",
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
     theme: "dark",
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat-app-user")) {
+  //     navigate("/login");
+  //   }
+  // }, []);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -46,8 +47,14 @@ function Register() {
 
   const emailValidation = (email) => {
     const expression = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    return expression.test(String(email).toLowerCase())
-}
+    return expression.test(String(email).toLowerCase());
+  };
+
+  const passwordValidation = (password) => {
+    const expression =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-\#\$\.\%\&\*\@\!])(?=.*[a-zA-Z]).{8,}$/g;
+    return expression.test(password);
+  };
 
   const handleValidation = () => {
     const { username, email, password, confirmPassword } = values;
@@ -74,6 +81,9 @@ function Register() {
         "Password should be equal or greater than 8 characters.",
         toastOptions
       );
+      return false;
+    } else if (!passwordValidation(values.password)) {
+      toast.error(<PasswordErrorMsg />, toastOptions);
       return false;
     }
     return true;
@@ -102,34 +112,46 @@ function Register() {
     setIsPasswordShown(!isPasswordShown);
   };
 
+  const toggleConfirmPasswordVisibility = () => {
+    setIsPasswordShown(!isPasswordShown);
+  };
+
   return (
     <>
       <div className={classes.formcontainer}>
         <form onSubmit={(event) => handleSubmit(event)}>
+          <div className={classes.mainlogo}>
+            <img src={MainLogo} alt="" />
+          </div>
           <div className={classes.brand}>
             <img src={Logo} alt="" />
             <h2>Chat App</h2>
           </div>
           <TextField
-            sx={{ m: 1, width: "25ch" }}
+            sx={{ m: 1, width: "100%" }}
             name="username"
             label="Username"
             type="text"
             onChange={(e) => handleChange(e)}
+            inputProps={{ style: { fontFamily: "poppins" } }}
+            InputLabelProps={{ style: { fontFamily: "poppins" } }}
           />
           <TextField
-            sx={{ m: 1, width: "25ch" }}
+            sx={{ m: 1, width: "100%" }}
             name="email"
             label="Email"
             type="email"
             onChange={(e) => handleChange(e)}
+            inputProps={{ style: { fontFamily: "poppins" } }}
+            InputLabelProps={{ style: { fontFamily: "poppins" } }}
           />
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <InputLabel>Password</InputLabel>
+          <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
+            <InputLabel sx={{ fontFamily: "poppins" }}>Password</InputLabel>
             <OutlinedInput
               type={isPasswordShown ? "text" : "password"}
               onChange={(e) => handleChange(e)}
               name="password"
+              inputProps={{ style: { fontFamily: "poppins" } }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton onClick={togglePasswordVisibility} edge="end">
@@ -140,15 +162,21 @@ function Register() {
               label="Password"
             />
           </FormControl>
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <InputLabel>Confirm Password</InputLabel>
+          <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
+            <InputLabel sx={{ fontFamily: "poppins" }}>
+              Confirm Password
+            </InputLabel>
             <OutlinedInput
               type={isPasswordShown ? "text" : "password"}
               onChange={(e) => handleChange(e)}
               name="confirmPassword"
+              inputProps={{ style: { fontFamily: "poppins" } }}
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton onClick={togglePasswordVisibility} edge="end">
+                  <IconButton
+                    onClick={toggleConfirmPasswordVisibility}
+                    edge="end"
+                  >
                     {isPasswordShown ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>

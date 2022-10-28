@@ -4,16 +4,19 @@
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #097a6b;
+  background: linear-gradient(to right, #f83600, #fe8c00);
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
+
 .loader {
   max-inline-size: 100%;
 }
 
 .titlecontainer {
   color: white;
+  text-align: center;
 }
 .avatars {
   display: flex;
@@ -34,12 +37,12 @@
 }
 .selected {
   border: 0.4rem solid #fff;
-  border-radius: 0.4rem;
+  border-radius: 4rem;
 }
 
 .submitbtn {
-  background-color: #11bfa8;
-  color: white;
+  background: white;
+  color: #f83600;
   padding: 1rem 2rem;
   border: none;
   font-weight: bold;
@@ -50,5 +53,37 @@
   transition: 0.5s ease-in-out;
 }
 .submitbtn:hover {
-  background-color: #097a6b;
+  color: black;
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+  }
+  .avatars {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 250px) and (max-width: 350px) {
+  .container {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+  }
+  .avatars {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

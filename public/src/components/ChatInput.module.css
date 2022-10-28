@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 5% 95%;
   align-items: center;
-  background-color: #a7abaa;
+  background-color: #fca62b;
   padding: 0 2rem;
   padding-bottom: 0.3rem;
   padding-top: 0.3rem;
@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #097a6b;
+  background-color: #f83600;
   border: none;
   outline: none;
 }

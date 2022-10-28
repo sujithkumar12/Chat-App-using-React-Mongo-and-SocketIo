@@ -6,13 +6,13 @@
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #097a6b;
+  background: linear-gradient(to right, #f83600, #fe8c00);
 }
 
 .container2 {
   height: 85vh;
   width: 85vw;
-  background-color: #d7d9d8;
+  background-color: #fcba03;
   display: grid;
   grid-template-columns: 25% 75%;
 }

@@ -4,10 +4,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
-  background-color: #097a6b;
+  gap: 1rem;
+  background: linear-gradient(to right, #f83600, #fe8c00);
   overflow: hidden;
+}
+
+.formcontainer .mainlogo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .formcontainer .brand {
@@ -35,13 +41,8 @@
   padding: 3rem 5rem;
 }
 
-/* @media screen and (min-width: 720px) and (max-width: 1080px) {
-  .formcontainer form{
-    gap: 1rem;
-  }
-} */
 .formcontainer .button {
-  background-color: #097a6b;
+  background: linear-gradient(to right, #f83600, #fe8c00);
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -52,37 +53,46 @@
   text-transform: capitalize;
   letter-spacing: 5px;
   transition: 0.5s ease-in-out;
+  width: 100%;
 }
 .formcontainer .button:hover {
-  background-color: #11bfa8;
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  color: black;
 }
 
 .formcontainer span {
   color: black;
+  text-align: center;
 }
 .formcontainer a {
-  color: #097a6b;
+  color: #e28503;
   text-decoration: none;
   font-weight: bold;
+  letter-spacing: 3px;
 }
 
-.passwordicon {
-  position: absolute;
-  top: 51%;
-  right: 45.2%;
-  cursor: pointer;
+@media screen and (min-width: 250px) and (max-width: 350px) {
+  .formcontainer form {
+    gap: 0.5rem;
+    width: 98%;
+    padding: 2rem 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .formcontainer .button {
+    padding: 0.5rem 1rem;
+  }
 }
 
-.passwordiconn {
-  position: absolute;
-  top: 51%;
-  right: 44.3%;
-  cursor: pointer;
-}
-
-.passwordiconnn {
-  position: absolute;
-  top: 59.5%;
-  right: 44.3%;
-  cursor: pointer;
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .formcontainer form {
+    gap: 1rem;
+    width: 90%;
+    padding: 2rem 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .formcontainer .button {
+    padding: 0.5rem 1rem;
+  }
 }

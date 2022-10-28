@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import classes from "./Register.module.css";
 import Logo from "../assets/logo.png";
+import MainLogo from "../assets/acc.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import axios from "axios";
 import { loginRoute } from "../utils/APIRoutes";
-import { AiOutlineEye } from "react-icons/ai";
-import { FaRegEyeSlash } from "react-icons/fa";
-
 import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -28,18 +26,18 @@ function Login() {
   });
 
   const toastOptions = {
-    position: "bottom-right",
+    position: "top-right",
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
     theme: "dark",
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat-app-user")) {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -83,23 +81,30 @@ function Login() {
     <>
       <div className={classes.formcontainer}>
         <form onSubmit={(event) => handleSubmit(event)}>
+          <div className={classes.mainlogo}>
+            <img src={MainLogo} alt="" />
+          </div>
           <div className={classes.brand}>
             <img src={Logo} alt="" />
             <h2>Chat App</h2>
           </div>
-          <TextField sx={{ m: 1, width: "25ch" }}
+          <TextField
+            sx={{ m: 1, width: "100%" }}
             name="username"
             label="Username"
             type="text"
             onChange={(e) => handleChange(e)}
             min="3"
+            inputProps={{ style: { fontFamily: "poppins" } }}
+            InputLabelProps={{ style: { fontFamily: "poppins" } }}
           />
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <InputLabel>Password</InputLabel>
+          <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
+            <InputLabel sx={{ fontFamily: "poppins" }}>Password</InputLabel>
             <OutlinedInput
               type={isPasswordShown ? "text" : "password"}
               onChange={(e) => handleChange(e)}
               name="password"
+              inputProps={{ style: { fontFamily: "poppins" } }}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton onClick={togglePasswordVisibility} edge="end">
