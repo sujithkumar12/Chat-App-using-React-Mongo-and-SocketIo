@@ -1,14 +1,6 @@
-import { useEffect } from "react";
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import styled from "styled-components";
 import Contacts from "./Contacts";
-import { io } from "socket.io-client";
-import axios from "axios";
-import { allUsersRoute, host } from "../utils/APIRoutes";
-import Welcome from "./Welcome";
-import ChatContainer from "./ChatContainer";
-import classes from "../pages/Chat.module.css";
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -50,45 +42,6 @@ const StyledBurger = styled.div`
 
 const Burger = ({ contacts, currentUser, changeChat }) => {
   const [open, setOpen] = useState(false);
-//   const socket = useRef();
-//   const navigate = useNavigate();
-//   const [contacts, setContacts] = useState([]);
-//   const [currentUser, setCurrentUser] = useState(undefined);
-//   const [currentChat, setCurrentChat] = useState(undefined);
-//   const [isLoaded, setIsLoaded] = useState(false);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       if (!localStorage.getItem("chat-app-user")) {
-//         navigate("/login");
-//       } else {
-//         setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")));
-//         setIsLoaded(true);
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   useEffect(() => {
-//     if (currentUser) {
-//       socket.current = io(host);
-//       socket.current.emit("add-user", currentUser._id);
-//     }
-//   }, [currentUser]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
-//       setContacts(data.data);
-//     };
-//     if (currentUser) {
-//       fetchData();
-//     }
-//   }, [currentUser]);
-
-//   const handleChatChange = (chat) => {
-//     setCurrentChat(chat);
-//   };
 
   return (
     <>

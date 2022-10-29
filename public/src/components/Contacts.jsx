@@ -114,7 +114,6 @@ const Div = styled.div`
   grid-template-rows: 100%;
 
   @media (max-width: 768px) {
-    background-color: #0d2538;
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(100%)")};
     height: 100vh;
     width: 100vw;

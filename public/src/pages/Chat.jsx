@@ -7,7 +7,7 @@ import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/MenuBar";
 
 function Chat() {
   const socket = useRef();
