@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import classes from "./ChatInput.module.css";
 import { BiSend } from "react-icons/bi";
-import { BsEmojiSmile } from "react-icons/bs";
-import Picker from "emoji-picker-react";
+// import { BsEmojiSmile } from "react-icons/bs";
+// import Picker from "emoji-picker-react";
 
 const ChatInput = ({ handleSendMsg }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [msg, setMsg] = useState("");
 
-  const handleEmojiPickerHideShow = () => {
-    setShowEmojiPicker(!showEmojiPicker);
-  };
+  // const handleEmojiPickerHideShow = () => {
+  //   setShowEmojiPicker(!showEmojiPicker);
+  // };
 
-  const handleEmojiClick = (event, emoji) => {
-    console.log(emoji);
-    let message = msg;
-    message += emoji.emoji;
-    setMsg(message);
-  };
+  // const handleEmojiClick = (event, emoji) => {
+  //   console.log(emoji);
+  //   let message = msg;
+  //   message += emoji.emoji;
+  //   setMsg(message);
+  // };
 
   const sendChat = (event) => {
     event.preventDefault();
@@ -30,10 +30,10 @@ const ChatInput = ({ handleSendMsg }) => {
   return (
     <div className={classes.container}>
       <div className={classes.buttoncontainer}>
-        <div className={classes.emoji}>
+        {/* <div className={classes.emoji}>
           <BsEmojiSmile />
           {showEmojiPicker && <Picker onEmojiClick={handleEmojiClick} />}
-        </div>
+        </div> */}
       </div>
       <form className={classes.inputcontainer} onSubmit={(e) => sendChat(e)}>
         <input

@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 5% 95%;
+  grid-template-columns: 100%;
   align-items: center;
   background-color: #fca62b;
   padding: 0 2rem;
@@ -63,7 +63,7 @@
   color: white;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 1rem;
     padding-bottom: 0.3rem;
@@ -76,7 +76,7 @@
     font-size: 1.5rem;
   }
 }
-
+/* 
 @media screen and (min-width: 480px) and (max-width: 720px) {
   .container {
     padding: 0 0.7rem;
@@ -105,4 +105,4 @@
   .inputcontainer button svg {
     font-size: 1.5rem;
   }
-}
+} */

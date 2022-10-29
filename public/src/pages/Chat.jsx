@@ -7,6 +7,7 @@ import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
+import NavBar from "../components/NavBar";
 
 function Chat() {
   const socket = useRef();
@@ -52,11 +53,16 @@ function Chat() {
   return (
     <div className={classes.container}>
       <div className={classes.container2}>
-        <Contacts
+        <NavBar
           contacts={contacts}
           currentUser={currentUser}
           changeChat={handleChatChange}
         />
+        {/* <Contacts
+          contacts={contacts}
+          currentUser={currentUser}
+          changeChat={handleChatChange}
+        /> */}
         {isLoaded && currentChat === undefined ? (
           <Welcome currentUser={currentUser} />
         ) : (

@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { getAllMessagesRoute, sendMessageRoute } from "../utils/APIRoutes";
 import classes from "./ChatContainer.module.css";
 import ChatInput from "./ChatInput";
-import Logout from "./Logout";
 import { v4 as uuidv4 } from "uuid";
 
 const ChatContainer = ({ currentChat, currentUser, socket }) => {
@@ -72,7 +71,6 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
                 <h3>{currentChat.username}</h3>
               </div>
             </div>
-            <Logout />
           </div>
           <div className={classes.chatmessages}>
             {messages.map((message) => {

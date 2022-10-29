@@ -1,12 +1,14 @@
 .container {
   display: grid;
-  grid-template-rows: 10% 10% 72% 8%;
+  grid-template-rows: 10% 10% 64% 10%;
+  grid-auto-flow: dense;
   overflow: hidden;
   background-color: #fca62b;
 }
 
 .brand {
   display: flex;
+  
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -80,7 +82,7 @@
   font-weight: normal;
 }
 
-@media screen and (min-width: 720px) and (max-width: 930px) {
+@media screen and (min-width: 768px) {
   .contact {
     min-height: 4rem;
   }
@@ -89,7 +91,7 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 720px) {
+/* @media screen and (min-width: 480px) and (max-width: 720px) {
   .contact {
     min-height: 3rem;
   }
@@ -116,4 +118,4 @@
   .username {
     font-size: 0.5rem;
   }
-}
+} */

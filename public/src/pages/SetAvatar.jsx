@@ -43,7 +43,8 @@ const SetAvatar = () => {
         localStorage.setItem("chat-app-user", JSON.stringify(user));
         navigate("/login");
       } else {
-        toast.error("Error setting avatar. Please try again", toastOptions);
+        // toast.error("Error setting avatar. Please try again", toastOptions);
+        toast.error("Click again.", toastOptions);
       }
     }
   };
