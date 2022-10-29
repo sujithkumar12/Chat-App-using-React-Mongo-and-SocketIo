@@ -72,7 +72,6 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
                 <h3>{currentChat.username}</h3>
               </div>
             </div>
-            {/* <input type="file" /> */}
             <Logout />
           </div>
           <div className={classes.chatmessages}>

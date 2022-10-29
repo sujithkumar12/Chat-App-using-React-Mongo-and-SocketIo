@@ -19,6 +19,7 @@ import PasswordErrorMsg from "../components/PasswordErrorMsg";
 
 function Register() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
@@ -113,7 +114,7 @@ function Register() {
   };
 
   const toggleConfirmPasswordVisibility = () => {
-    setIsPasswordShown(!isPasswordShown);
+    setIsConfirmPasswordShown(!isConfirmPasswordShown);
   };
 
   return (
@@ -167,7 +168,7 @@ function Register() {
               Confirm Password
             </InputLabel>
             <OutlinedInput
-              type={isPasswordShown ? "text" : "password"}
+              type={isConfirmPasswordShown ? "text" : "password"}
               onChange={(e) => handleChange(e)}
               name="confirmPassword"
               inputProps={{ style: { fontFamily: "poppins" } }}
@@ -177,7 +178,7 @@ function Register() {
                     onClick={toggleConfirmPasswordVisibility}
                     edge="end"
                   >
-                    {isPasswordShown ? <VisibilityOff /> : <Visibility />}
+                    {isConfirmPasswordShown ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
               }

@@ -31,7 +31,7 @@ const ChatInput = ({ handleSendMsg }) => {
     <div className={classes.container}>
       <div className={classes.buttoncontainer}>
         <div className={classes.emoji}>
-          <BsEmojiSmile onClick={handleEmojiPickerHideShow} />
+          <BsEmojiSmile />
           {showEmojiPicker && <Picker onEmojiClick={handleEmojiClick} />}
         </div>
       </div>

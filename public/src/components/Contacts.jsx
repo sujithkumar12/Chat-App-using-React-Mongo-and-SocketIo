@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
-import Menu from "../assets/menu.png";
 import TextField from "@mui/material/TextField";
 import classes from "./Contacts.module.css";
 import Logout from "./Logout";

@@ -16,11 +16,11 @@ const Welcome = (currentUser) => {
   return (
     <div className={classes.container}>
       <img src={Robot} alt="Robot" />
-      <h1>
+      <p>
         Welcome, Message to strangers
-      </h1>
-      <h3>You're now chatting with a random stranger</h3>
-      <h3>Please select a chat to start messaging.</h3>
+      </p>
+      <p className={classes.subtext}>You're now chatting with a random stranger.</p>
+      <p className={classes.subtext}>Please select a chat to start messaging.</p>
     </div>
   );
 };

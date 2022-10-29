@@ -80,9 +80,40 @@
   font-weight: normal;
 }
 
-/* @media screen and (min-width: 720px) and (max-width: 1080px) {
-  .username h2 {
-    font-size: 1rem;
-    gap: 0.5rem;
+@media screen and (min-width: 720px) and (max-width: 930px) {
+  .contact {
+    min-height: 4rem;
   }
-} */
+  .avatar img {
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) {
+  .contact {
+    min-height: 3rem;
+  }
+  .avatar img {
+    height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 480px) {
+  .brand img {
+    height: 1.5rem;
+  }
+
+  .brand h2 {
+    font-size: 1rem;
+  }
+  
+  .contact {
+    min-height: 2rem;
+  }
+  .avatar img {
+    height: 1.6rem;
+  }
+  .username {
+    font-size: 0.5rem;
+  }
+}
