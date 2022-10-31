@@ -4,7 +4,6 @@ import { BiSend } from "react-icons/bi";
 
 const ChatInput = ({ handleSendMsg }) => {
   const [msg, setMsg] = useState("");
-  const [open, setOpen] = useState(false);
 
   const sendChat = (event) => {
     event.preventDefault();
