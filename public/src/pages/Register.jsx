@@ -36,11 +36,11 @@ function Register() {
     theme: "dark",
   };
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("chat-app-user")) {
-  //     navigate("/login");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/login");
+    }
+  }, []);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });

@@ -87,7 +87,7 @@ const SetAvatar = () => {
                   <img
                     src={`data:image/svg+xml;base64,${avatar}`}
                     alt="avatar"
-                    key={avatar}
+                    key={index}
                     onClick={() => setSelectedAvatar(index)}
                   />
                 </div>
